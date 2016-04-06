@@ -1,0 +1,18 @@
+{
+    "contents" : "#Problem 1\nstudentData <- read.csv(\"students.csv\", header = TRUE, stringsAsFactors=FALSE)\n#A\ntable(studentData$Gender)\n#B\nmean(studentData$Height)\n#C\ntable(studentData$Major == \"statistics\")\n#D\ntable(studentData$Major == \"undecided\")\n#E\nsubset(studentData, Sisters==3)\n#F\nsubset(studentData, Brothers == 0)\n#G\nstudentData <- within(studentData,{Major[Major == \"undecided\"]<- \"Math\"})\nstudentData\n\n\nsetwd(\"Desktop\")\nstr(carsData)\n\n#Problem 2\ncarsData <- read.csv(\"usedcars.csv\",header=T,stringsAsFactors=FALSE)\ncarsData\n#A\nmax(carsData$mileage)\n#B\nmin(carsData$mileage)\n#C\nmax(carsData$price)\n#D\nmin(carsData$price)\n#E\nunique(carsData$color)\nunique(carsData$model)\nunique(carsData$transmission)\n#F\ntable(carsData$color)\n#G\ntable(carsData$model)\n#H\ntable(carsData$transmission)\n#I\nsum(carsData$mileage)\nmean(carsData$mileage)\n#J\nsum(carsData$price)\nmean(carsData$price)\n#K\nsd(carsData$mileage)\nsd(carsData$price)\n#L\ntable(carsData$model,carsData$transmission)\n#M\nsort(carsData$price, decreasing = T)\n#N\nsort(carsData$mileage)\n#O\ntable(carsData$year, carsData$model)\n#P\ncarsData <- within(carsData,{color[color==\"Red\"]<-\"Purple\"})\ncarsData\n#Q\ninstall.packages(\"ggplot2\")\nlibrary(ggplot2)\ncarsData <- within(carsData,{price[mileage>35000]<-10000})\ncarsData\nhist(carsData$year, carsData$price)\nggplot(data=carsData, aes(carsData$price)) + geom_histogram()\nggplot(data=carsData, aes(carsData$year)) + geom_histogram()\nggplot(data=carsData, aes(carsData$mileage)) + geom_histogram()\n\n\nggplot(data=carsData, aes(carsData$price)) + geom_density()\nggplot(data=carsData, aes(carsData$year)) + geom_density()\nggplot(data=carsData, aes(carsData$mileage)) + geom_density()\n\nlibrary(corrgram)\nlibrary(\"ff\")\nlibrary(\"arules\")\ndbdata <- read.transactions(file = \"dataset.csv\", header=TRUE, VERBOSE=TRUE, first.rows=10000, next.rows=50000, colClasses=NA)\ndbdata\n?apriori()\nrules = apriori(dbdata, parameter = list(sup=0.5, conf=0.9, target=\"rules\"))\nmean(dbdata$item0)\ncalcMean <- function(dbdata) {\n  polmean <- mean(dbdata$item0, na.rm = TRUE)\n  polmean\n}\nread.mean<-function(dataset.csv,\"item0){\n  df<-read.csv(\"dataset.csv\")\n  mean.df <- mean(df[,item0])\n  return(mean.df)\n}\n\ngetOption(\"max.print\")\n",
+    "created" : 1454443990908.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2822655334",
+    "id" : "7FACB0C3",
+    "lastKnownWriteTime" : 4299745296,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

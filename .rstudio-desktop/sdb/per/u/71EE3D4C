@@ -1,0 +1,18 @@
+{
+    "contents" : "library(bigmemory)\ndbproject = read.big.matrix(file = \"dataset.csv\", header=TRUE, stringAsFactor = FALSE)\nbdproject\ndbproject\ndbpro\ndbdata <- read.big.matrix(file = \"dataset.csv\", header=TRUE)\ndbdata\nlibrary(arules)\n\na = apriori(dbdata, parameter = list(sup=0.001, conf=0.01, target=\"rules\"))\nas(a,\"transcations\")\n",
+    "created" : 1455083275994.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1851901859",
+    "id" : "71EE3D4C",
+    "lastKnownWriteTime" : 2314885530818447904,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled4"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

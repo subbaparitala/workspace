@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1455051719765.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5DE044DD",
+    "lastKnownWriteTime" : 395136991233,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "vvvtyuzrhz",
+        "caption" : "insu",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=insu&cache_key=vvvtyuzrhz",
+        "displayedObservations" : 1338,
+        "environment" : "",
+        "object" : "insu",
+        "totalObservations" : 1338,
+        "variables" : 7
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

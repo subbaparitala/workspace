@@ -1,0 +1,18 @@
+{
+    "contents" : "library(data.table)\nlibrary(ggplot2)\nlibrary(moments)\nlibrary(arules)\n\ndata(AdultUCI)\nadult = read.csv(\"AdultUCI.csv\", header = T, stringsAsFactors = FALSE)\nadult\n\nadult$fnlwgt <- NULL\n\nsetnames(adult, old=c(\"education-num\", \"marital-status\",\"capital-gain\",\"capital-loss\",\"hours-per-week\",\"native-country\"), new=c(\"educationNum\",\"maritalStatu\",\"capitalGain\", \"capitalLoss\", \"hoursPerWeek\",\"nativeCountry\"))\n",
+    "created" : 1455658256411.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1881442148",
+    "id" : "7B2F7CFA",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled7"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,18 @@
+{
+    "contents" : "#Problem 1\ncarsData = read.csv(\"usedcars.csv\", header = TRUE, stringsAsFactors = FALSE)\n\n\n#A\nggplot(data=carsData, aes(carsData$price)) + geom_histogram()\nggplot(data=carsData, aes(carsData$year)) + geom_histogram()\nggplot(data=carsData, aes(carsData$mileage)) + geom_histogram()\n\n#B\nggplot(data=carsData, aes(carsData$price)) + geom_density()\nggplot(data=carsData, aes(carsData$year)) + geom_density()\nggplot(data=carsData, aes(carsData$mileage)) + geom_density()\n\n#C\n# BAsed on the above density plots the year is left skewed since it has the negative skewness \n#Price is somewhat left skewed but not like year variable\n\n#D\n#The blue graph will have the posititve correaltion and the red graph will have the neagative correaltion \n#Here price has positive correlation and year and mileage has negative correaltion \ncorrgram(carsData, order = TRUE, upper.panel = panel.pie, lower.panel = panel.pts)\n\n\n#E\n# There are outliers for price variable and  we can see from the box plot\nggplot(data = carsData, aes(x = factor(0), y = price)) + geom_boxplot() + xlab(\"\")+ scale_x_discrete(breaks = NULL) \n\n#F\nggplot(data = carsData, aes(x = factor(0), y = mileage)) + geom_boxplot() + xlab(\"\") + scale_x_discrete(breaks = NULL)\n\n#G\nfact = as.factor(carsData$year)\nfact\n\n#H\nggplot(data = carsData, aes(fact, price)) + geom_boxplot() + xlab(\"\")+ scale_x_discrete(breaks = NULL) \n\n\n#Problem 2\n\ninsurance = read.csv(\"insurance.csv\",header = TRUE, stringsAsFactors = FALSE)\ninsurance\n\n#A\nggplot(insurance) + geom_bar(aes(x=region, fill= smoker), position=\"dodge\" )\nggplot(insurance) + geom_bar(aes(x=region, fill= sex), position=\"dodge\" )\nggplot(insurance) + geom_bar(aes(x=smoker, fill= sex), position=\"dodge\" )\n#B\nggplot(insurance, aes(x=bmi, y= charges)) + geom_point()\n#C\nggplot(insurance, aes(x=charges, y= age)) + geom_point()\n#D\nchildren <- factor(insurance$children)\nchildren\nggplot(insurance, aes(x=children, fill=region)) + geom_bar(position=\"dodge\" )\n#E\nmean(insurance$age)\nmax(insurance$age)\ntable(insurance$sex)\nmean(insurance$charges)\ntable(insurance$region)\n",
+    "created" : 1455066082200.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1873958164",
+    "id" : "B7EE1106",
+    "lastKnownWriteTime" : 31525687025139779,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

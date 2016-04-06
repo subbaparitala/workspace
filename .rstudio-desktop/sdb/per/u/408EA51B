@@ -1,0 +1,18 @@
+{
+    "contents" : "project = read.csv(\"dataset.csv\",nrow=675754)\nis.na(project)\np<-na.omit(project)\nlibrary(arules)\nq<-sapply(project,as.factor)\nas.factor(q)\n\nrules = apriori(as.factor(q), parameter = list(sup=0.001, conf=0.9, target=\"rules\"))\ninspect(rules)\n",
+    "created" : 1455295286872.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "774782743",
+    "id" : "408EA51B",
+    "lastKnownWriteTime" : 2314885530818447904,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

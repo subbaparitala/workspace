@@ -1,0 +1,18 @@
+{
+    "contents" : "\nlibrary(data.table)\nlibrary(ggplot2)\nlibrary(moments)\n\nlibrary(arules)\ndata(AdultUCI)\n\nadult = subset(AdultUCI,select = -c(fnlwgt) )\nadult\n\n\nsetnames(adult, old=c(\"education-num\", \"marital-status\",\"capital-gain\",\"capital-loss\",\"hours-per-week\",\"native-country\"), new=c(\"educationNum\",\"maritalStatu\",\"capitalGain\", \"capitalLoss\", \"hoursPerWeek\",\"nativeCountry\"))\nadult\nggplot(adult) + geom_bar(aes(x=capitalLoss), fill= \"gray\")  + theme(axis.title.x = element_text(face=\"bold\", colour=\"#990000\", size=12), axis.text.x= element_text(angle=90,vjust=0.5, size=10))\nggplot(adult) + geom_bar(aes(x=age), fill= \"gray\")  + theme(axis.title.x = element_text(face=\"bold\", colour=\"#990000\", size=12), axis.text.x= element_text(angle=90,vjust=0.5, size=10))\nggplot(adult) + geom_bar(aes(x=hoursPerWeek), fill= \"gray\")  + theme(axis.title.x = element_text(face=\"bold\", colour=\"#990000\", size=12), axis.text.x= element_text(angle=90,vjust=0.5, size=10))\nggplot(adult) + geom_bar(aes(x=capitalGain), fill= \"gray\")  + theme(axis.title.x = element_text(face=\"bold\", colour=\"#990000\", size=12), axis.text.x= element_text(angle=90,vjust=0.5, size=10))\nggplot(adult) + geom_bar(aes(x=educationNum), fill= \"gray\")  + theme(axis.title.x = element_text(face=\"bold\", colour=\"#990000\", size=12), axis.text.x= element_text(angle=90,vjust=0.5, size=10))\nskewness(adult$educationNum)\nskewness(adult$age)\nskewness(adult$capitalLoss)\nskewness(adult$capitalGain)\nskewness(adult$hoursPerWeek)\n\nlibrary(corrgram)\ncorrgram(adult, order = TRUE, upper.panel = panel.pie, lower.panel = panel.shade)\n\n\n\nskewness(adult$age)\ntable(is.na(adult$income))\nadult <- replace(adult$income, is.na(adult$income), \"No income\")\nadult\nggplot(adult) + geom_bar(aes(x=income), fill= \"gray\")\n\n",
+    "created" : 1455548523755.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3667550873",
+    "id" : "ECCAF5C2",
+    "lastKnownWriteTime" : 8589869059,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled6"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

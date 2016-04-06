@@ -1,0 +1,18 @@
+{
+    "contents" : "carsData = read.csv(\"usedcars.csv\", header = TRUE, stringsAsFactors = FALSE)\ncarsData\n#A\nggplot(data=carsData) + geom_histogram(aes(x = year), binwidth = 0.5, fill=\"red\")\nggplot(data=carsData) + geom_histogram(aes(x = price), fill=\"orange\")\nggplot(data=carsData) + geom_histogram(aes(x = mileage),  fill=\"blue\")\n#B\nggplot(data=carsData) + geom_density(aes(x = year),  fill=\"red\")\nggplot(data=carsData) + geom_density(aes(x = price),  fill=\"green\")\nggplot(data=carsData) + geom_density(aes(x = mileage),  fill=\"yellow\")\n\n#c\nlibrary(moments)\n\nskewness(carsData$year)\n#The year is left skewed \nskewness(carsData$price)\n\nskewness(carsData$mileage)\n\nlibrary(ggplot2)\n#D\nlibrary(corrgram)\ncorrgram(carsData)\n#The price is positively correlated and the year and mileage are negatively correalted \ncorrgram(carsData, order = TRUE, upper.panel = panel.pie, lower.panel = panel.pts)\n#E\n#Yes, there are outliers for price box plot\nggplot(data = carsData, aes(x = factor(0), y = price)) + geom_boxplot() + xlab(\"\")+ scale_x_discrete(breaks = NULL) \n#F\nggplot(data = carsData, aes(x = factor(0), y = mileage)) + geom_boxplot() + xlab(\"\") + scale_x_discrete(breaks = NULL)\n#G\nfact = as.factor(carsData$year)\n#H\nggplot(data = carsData, aes(x = as.factor(carsData$year), y = price)) + geom_boxplot() + xlab(\"\")+ scale_x_discrete(breaks = NULL) \n#Problem 2\ninsu = read.csv(\"insurance.csv\",header = TRUE, stringsAsFactors = FALSE)\ninsu\n#A\nggplot(insu) + geom_bar(aes(x=region, fill= smoker), position=\"dodge\" )\nggplot(insu) + geom_bar(aes(x=region, fill= sex), position=\"dodge\" )\nggplot(insu) + geom_bar(aes(x=smoker, fill= sex), position=\"dodge\" )\n#B\nggplot(insu, aes(x=bmi, y= charges)) + geom_point()\n#C\nggplot(insu, aes(x=charges, y= age)) + geom_point()\n#D\nchild <- factor(insu$children)\nggplot(insu, aes(x=child, fill=region)) + geom_bar(position=\"dodge\" )\n#E\nmean(insu$age)\nmax(insu$age)\ntable(insu$sex)\nmean(insu$charges)\ntable(insu$region)\n\n",
+    "created" : 1455028481575.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2989741143",
+    "id" : "46C68E6D",
+    "lastKnownWriteTime" : 6066188612560498736,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
